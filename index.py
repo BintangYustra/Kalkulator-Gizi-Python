@@ -29,6 +29,7 @@ else:
                                     ])
     if tingkat_aktivitas == "---":
         st.write("---")
+        
     elif tingkat_aktivitas == "Jarang gerak/duduk terus":
         tdee = bmr * 1.2
         st.metric(label="TDEE Anda", value=f"{tdee} Kalori per Hari")
