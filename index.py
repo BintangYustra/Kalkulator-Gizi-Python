@@ -1,10 +1,8 @@
 import streamlit as st
 import pandas as pd
 import sklearn as sk
-from PIL import Image
 
-image = Image.open("foodBanner.jpg")
-st.image(image)
+st.image("foodBanner.jpg", use_container_width=True)
 st.title("Kalkulator Gizi Makanan")
 jenis_kelamin = st.selectbox("Pilih Jenis Kelamin", ["---", "Pria", "Wanita"])
 
