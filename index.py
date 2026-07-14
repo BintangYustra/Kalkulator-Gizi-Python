@@ -1,5 +1,9 @@
+import os
 import streamlit as st
 import pandas as pd
+import numpy as np
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.metrics.pairwise import cosine_similarity
 
 st.image("foodBanner.jpg")
 st.title("Kalkulator Gizi Makanan")
