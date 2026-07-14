@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import sklearn as sk
 
 st.image("foodBanner.jpg", use_container_width=True)
 st.title("Kalkulator Gizi Makanan")
