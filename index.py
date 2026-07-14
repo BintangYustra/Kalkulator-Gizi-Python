@@ -5,9 +5,15 @@ import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics.pairwise import cosine_similarity
 
+st.set_page_config(page_title="Kalkulator Gizi", page_icon="🥗", layout="wide")
+
 st.image("foodBanner.jpg")
 st.title("Kalkulator Gizi Makanan")
-jenis_kelamin = st.selectbox("Pilih Jenis Kelamin", ["---", "Pria", "Wanita"])
+
+tab1, tab2, tab3 = st.tabs(["👤 Profil", "🍽️ Pilih Makanan", "📊 Hasil & Rekomendasi"])
+
+with tab1:
+    jenis_kelamin = st.selectbox("Pilih Jenis Kelamin", ["---", "Pria", "Wanita"])
 
 if jenis_kelamin == "---":
     st.write("Pilih Jenis Kelamin")
@@ -55,3 +61,6 @@ else:
     elif tingkat_aktivitas == "Aktivitas sangat berat (olahraga intens 2x sehari)":
         tdee = bmr * 1.9
         st.metric(label="TDEE Anda", value=f"{tdee} Kalori per Hari")
+
+with tab2:
+
