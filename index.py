@@ -3,10 +3,6 @@ import pandas as pd
 import sklearn as sk
 
 
-
-
-
-
 st.title("Kalkulator Gizi Makanan")
 jenis_kelamin = st.selectbox("Pilih Jenis Kelamin", ["---", "Pria", "Wanita"])
 
