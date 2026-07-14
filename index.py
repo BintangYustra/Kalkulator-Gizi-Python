@@ -1,5 +1,8 @@
 import streamlit as st
+import pandas as pd
+import sklearn as sk
 
+st.image("foodBanner.jpg", use_container_width=True)
 st.title("Kalkulator Gizi Makanan")
 jenis_kelamin = st.selectbox("Pilih Jenis Kelamin", ["---", "Pria", "Wanita"])
 
@@ -29,6 +32,7 @@ else:
                                     ])
     if tingkat_aktivitas == "---":
         st.write("---")
+
     elif tingkat_aktivitas == "Jarang gerak/duduk terus":
         tdee = bmr * 1.2
         st.metric(label="TDEE Anda", value=f"{tdee} Kalori per Hari")
@@ -48,39 +52,3 @@ else:
     elif tingkat_aktivitas == "Aktivitas sangat berat (olahraga intens 2x sehari)":
         tdee = bmr * 1.9
         st.metric(label="TDEE Anda", value=f"{tdee} Kalori per Hari")
-
-
-# if tingkat_aktivitas == "---":
-#     st.write("---")
-# elif tingkat_aktivitas == "Aktivitas ringan (olahraga 1-3 kali/minggu)":
-#     tdee = man_bmr * 1.2
-#     if st.button("TDEE Anda = "):
-#         st.write(tdee)
-
-
-
-
-# jenis_kelamin = st.selectbox("Pilih Jenis Kelamin", ["---", "Pria", "Wanita"])
-# if jenis_kelamin == "---":
-#     st.write("Pilih Jenis Kelamin")
-# elif jenis_kelamin == "Pria":
-#     st.write("Silahkan Masukkan Infomasi Singkat Diri Anda")
-#     umur = st.number_input("Umur = ", 0)
-#     tinggi_badan = st.number_input("Tinggi Badan(CM) = ", 0)
-#     berat_badan = st.number_input("Berat Badan(KG) = ", 0)
-#     man_bmr = (10 * berat_badan) + (6.25 * tinggi_badan) - (5 * umur) + 5
-#     if st.button("BMR Anda = " ):
-#         st.success(man_bmr)
-#     tingkat_aktivitas = st.selectbox("Tipe Aktivitas = ", 
-#                                      ["---","Jarang gerak/duduk terus",
-#                                       "Aktivitas ringan (olahraga 1-3 kali/minggu)",
-#                                       "Aktivitas sedang (olahraga 3-5 kali/minggu)",
-#                                       "Aktivitas berat (olahraga 6-7 kali/minggu)",
-#                                       "Aktivitas sangat berat (olahraga intens 2x sehari)"
-#                                       ])
-#     if tingkat_aktivitas == "---":
-#         st.write("---")
-#     elif tingkat_aktivitas == "Aktivitas ringan (olahraga 1-3 kali/minggu)":
-#         tdee = man_bmr * 1.2
-#         if st.button("TDEE Anda = "):
-#             st.write(tdee)
