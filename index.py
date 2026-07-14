@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 
-st.image("image.png", width=400)
 st.title("Kalkulator Gizi Makanan")
 jenis_kelamin = st.selectbox("Pilih Jenis Kelamin", ["---", "Pria", "Wanita"])
 
