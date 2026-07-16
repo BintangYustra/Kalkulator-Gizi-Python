@@ -8,10 +8,13 @@ from sklearn.metrics.pairwise import cosine_similarity
 st.set_page_config(page_title="Kalkulator Gizi", page_icon="🥗", layout="wide")
 # rubah icon pake custom made nanti
 st.image("BannerSmall2.png") 
-# rubah size banner jadi slim nanti
+
 st.title("Kalkulator Gizi Makanan")
 
-tab1, tab2, tab3 = st.tabs(["Profil", "Pilih Makanan", "Hasil & Rekomendasi"])
+# Deklarasi
+DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
+
+tab1, tab2 = st.tabs(["Profil", "Pilih Makanan"])
 
 with tab1:
     jenis_kelamin = st.selectbox("Pilih Jenis Kelamin", ["---", "Pria", "Wanita"])
@@ -27,7 +30,7 @@ with tab1:
         if jenis_kelamin == "Pria":
             bmr = (10 * berat_badan) + (6.25 * tinggi_badan) - (5 * umur) + 5
 
-        else:
+        else: # buat wanita
             bmr = (10 * berat_badan) + (6.25 * tinggi_badan) - (5 * umur) - 161
 
         st.metric(label="BMR Anda", value=f"{bmr} kkal/hari")
@@ -64,4 +67,4 @@ with tab1:
             st.metric(label="TDEE Anda", value=f"{tdee} Kalori per Hari")
 
 with tab2:
-    st.write("In Progress")
+    st.write("Masih Dibuat")
