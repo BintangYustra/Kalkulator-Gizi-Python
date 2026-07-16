@@ -6,11 +6,12 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics.pairwise import cosine_similarity
 
 st.set_page_config(page_title="Kalkulator Gizi", page_icon="🥗", layout="wide")
-
-st.image("foodBanner.jpg")
+# rubah icon pake custom made nanti
+st.image("BannerSmall2.png") 
+# rubah size banner jadi slim nanti
 st.title("Kalkulator Gizi Makanan")
 
-tab1, tab2, tab3 = st.tabs(["👤 Profil", "🍽️ Pilih Makanan", "📊 Hasil & Rekomendasi"])
+tab1, tab2, tab3 = st.tabs(["Profil", "Pilih Makanan", "Hasil & Rekomendasi"])
 
 with tab1:
     jenis_kelamin = st.selectbox("Pilih Jenis Kelamin", ["---", "Pria", "Wanita"])
